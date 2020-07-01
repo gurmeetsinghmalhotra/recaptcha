@@ -19,7 +19,7 @@ export default function Person() {
   )
 
   if (error) return <div>{error.message}</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <div>Loadingssssss...</div>
 
   return (
     <table>

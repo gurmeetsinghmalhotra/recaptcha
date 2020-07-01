@@ -68,16 +68,18 @@ export default function Index() {
   const { data, error } = useSWR("/api/people", fetcher);
 
   const [resp, setResp] = React.useState({});
+  const [count, setCount] = React.useState(0);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loadingssssss...</div>;
 
   const onSubmit = async () => {
+    setCount(count+1);
     setResp({});
     grecaptcha.ready(function () {
       grecaptcha
         .execute("6Ldb56sZAAAAAIZh5zd7ZTeCah1mUawiRxSLc8GK", {
-          action: "submit",
+          action: `hi${count}`,
         })
         .then(function (token) {
           console.log(token);
@@ -104,6 +106,8 @@ export default function Index() {
         <script src="https://www.google.com/recaptcha/api.js?render=6Ldb56sZAAAAAIZh5zd7ZTeCah1mUawiRxSLc8GK"></script>
       </Head>
       <button onClick={onSubmit}>Get User Score</button>
+      {count}
+      <br/>
       {JSON.stringify(resp, null, 2)}
       {/* <ul>
         {data.map((p, i) => (

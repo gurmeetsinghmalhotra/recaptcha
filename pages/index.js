@@ -11,6 +11,7 @@ export default function Index() {
 
   return (
     <ul>
+      <>Test</>
       {data.map((p, i) => (
         <Person key={i} person={p} />
       ))}

@@ -106,9 +106,21 @@ export default function Index() {
         <script src="https://www.google.com/recaptcha/api.js?render=6Ldb56sZAAAAAIZh5zd7ZTeCah1mUawiRxSLc8GK"></script>
       </Head>
       <button onClick={onSubmit}>Get User Score</button>
-      {count}
+      &nbsp;{count}
       <br/>
-      {JSON.stringify(resp, null, 2)}
+      <pre>
+      {JSON.stringify(resp, null, 2)}</pre>
+      <pre>
+      
+  "success" - true|false,      // whether this request was a valid reCAPTCHA token for your site<br/>
+  "score" - number             // the score for this request (0.0 - 1.0)<br/>
+  "action" - string            // the action name for this request (important to verify)<br/>
+  "challenge_ts"-  timestamp,  // timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ)<br/>
+  "hostname"- string,         // the hostname of the site where the reCAPTCHA was solved<br/>
+  "error-codes"- [...]        // optional
+
+
+      </pre>
       {/* <ul>
         {data.map((p, i) => (
           <Person key={i} person={p} />

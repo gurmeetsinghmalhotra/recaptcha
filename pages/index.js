@@ -73,7 +73,7 @@ export default function Index() {
   if (!data) return <div>Loadingssssss...</div>;
 
   const onSubmit = async () => {
-    console.log('here');
+    setResp({});
     grecaptcha.ready(function () {
       grecaptcha
         .execute("6Ldb56sZAAAAAIZh5zd7ZTeCah1mUawiRxSLc8GK", {
